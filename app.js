@@ -17,9 +17,9 @@ const {
   deleteCourseById: coursesDeleteCourseById,
 } = require('./server/controllers/courses');
 
-const hostname = '127.0.0.1';
-const port = 3000;
+const port = parseInt(process.env.PORT, 10) || 3000;
 const app = express(); // setup express application
+app.set('port', port);
 const server = http.createServer(app);
 
 app.use(logger('dev')); // log requests to the console
@@ -46,6 +46,4 @@ app.get('*', (req, res) =>
   }),
 );
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+server.listen(port);
