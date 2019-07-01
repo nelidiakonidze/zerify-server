@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const http = require('http');
@@ -23,6 +24,8 @@ app.set('port', port);
 const server = http.createServer(app);
 
 app.use(logger('dev')); // log requests to the console
+
+app.use(cors());
 
 // Parse incoming requests data
 app.use(bodyParser.json());
