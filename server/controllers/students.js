@@ -4,7 +4,7 @@ const create = async (req, res) => {
   // const firstName = req.body.firstName;
   // const lastName = req.body.lastName;
 
-  const {firstName, lastName, courseId, email} = req.body;
+  const {firstName, lastName, email, courseId} = req.body;
 
   if (!firstName) {
     return res.status(400).send({message: 'Invalid first name'});
