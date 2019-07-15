@@ -1,9 +1,6 @@
 const {Student, Course} = require('../models');
 
 const create = async (req, res) => {
-  // const firstName = req.body.firstName;
-  // const lastName = req.body.lastName;
-
   const {firstName, lastName, email, courseId} = req.body;
 
   if (!firstName) {
