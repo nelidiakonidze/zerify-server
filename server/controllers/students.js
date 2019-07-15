@@ -4,7 +4,7 @@ const create = async (req, res) => {
   // const firstName = req.body.firstName;
   // const lastName = req.body.lastName;
 
-  const {firstName, lastName, courseId} = req.body;
+  const {firstName, lastName, courseId, email} = req.body;
 
   if (!firstName) {
     return res.status(400).send({message: 'Invalid first name'});
@@ -14,6 +14,10 @@ const create = async (req, res) => {
     return res.status(400).send({message: 'Invalid last name'});
   }
 
+  if (!email) {
+    return res.status(400).send({message: 'Invalid email'});
+  }
+
   if (!courseId || isNaN(courseId)) {
     return res.status(400).send({message: 'Invalid course Id'});
   }
@@ -21,6 +25,7 @@ const create = async (req, res) => {
   const student = await Student.create({
     firstName,
     lastName,
+    email,
   });
 
   const course = await Course.findByPk(courseId);
@@ -39,28 +44,6 @@ const list = async (req, res) => {
       },
     ],
   });
-
-  // const processData = students => {
-  //   console.log(JSON.parse(students));
-  //   let tempArray = students.map((index, currObj) => {
-  //     let tempCourses = currObj.courses.map((index, course) => {
-  //       return {
-  //         id: course.id,
-  //         name: course.name,
-  //         hours: course.hours,
-  //       };
-  //     });
-  //     return {
-  //       id: currObj.id,
-  //       firstName: currObj.firstName,
-  //       lastName: currObj.lastName,
-  //       courses: tempCourses,
-  //     };
-  //   });
-  //   return {
-  //     students: tempArray,
-  // //   };
-  // };
 
   return res.status(200).send({students});
 };
