@@ -10,17 +10,17 @@ const create = async (req, res) => {
   //   return res.status(400).send({message: 'Invalid first name'});
   // }
 
-  if (!lastName) {
-    return res.status(400).send({message: 'Invalid last name'});
-  }
+  // if (!lastName) {
+  //   return res.status(400).send({message: 'Invalid last name'});
+  // }
 
-  if (!email) {
-    return res.status(400).send({message: 'Invalid email'});
-  }
+  // if (!email) {
+  //   return res.status(400).send({message: 'Invalid email'});
+  // }
 
-  if (!courseId || isNaN(courseId)) {
-    return res.status(400).send({message: 'Invalid course Id'});
-  }
+  // if (!courseId || isNaN(courseId)) {
+  //   return res.status(400).send({message: 'Invalid course Id'});
+  // }
 
   const student = await Student.create({
     firstName,
