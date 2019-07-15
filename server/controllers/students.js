@@ -6,9 +6,9 @@ const create = async (req, res) => {
 
   const {firstName, lastName, email, courseId} = req.body;
 
-  if (!firstName) {
-    return res.status(400).send({message: 'Invalid first name'});
-  }
+  // if (!firstName) {
+  //   return res.status(400).send({message: 'Invalid first name'});
+  // }
 
   if (!lastName) {
     return res.status(400).send({message: 'Invalid last name'});
