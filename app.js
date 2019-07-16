@@ -21,7 +21,7 @@ const {
 const {
   create: certificatesCreate,
   list: certificatesList,
-} = require('./server/controllers/certificate');
+} = require('./server/controllers/certificates');
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 const app = express(); // setup express application
