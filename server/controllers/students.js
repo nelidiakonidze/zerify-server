@@ -23,7 +23,7 @@ const email = async (req, res) => {
     to: 'tingel.tangel7@yahoo.de', // list of receivers
     subject: 'Zertify Certificate Notification', // Subject line
     text: `Congratulations, click the link to open your certificate: "EXAMPLE"`, // plain text body
-    html: output, // html body
+    html: '<b>Hi there here will be your certificate link in the future!</b>', // html body
   };
   // build template email
   //create link with certificate
