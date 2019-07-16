@@ -1,11 +1,11 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Certificate = sequelize.define('Certificate', {
+  const Certificates = sequelize.define('Certificates', {
     hash: DataTypes.STRING,
     settings: DataTypes.STRING
   }, {});
-  Certificate.associate = function(models) {
+  Certificates.associate = function(models) {
     // associations can be defined here
   };
-  return Certificate;
+  return Certificates;
 };
