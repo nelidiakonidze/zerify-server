@@ -11,7 +11,7 @@ module.exports = {
       hash: {
         type: Sequelize.STRING
       },
-      certificate: {
+      settingscertificate: {
         type: Sequelize.STRING
       },
       createdAt: {
