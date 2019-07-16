@@ -1,4 +1,4 @@
-const {Certificate} = require('../models');
+const {Certificates} = require('../models');
 
 const create = async (req, res) => {
   //   const id = req.body.id;
@@ -12,14 +12,14 @@ const create = async (req, res) => {
     return res.status(400).send({message: 'Invalid certificate'});
   }
 
-  const certificate = await Certificate.create({
+  const certificate = await Certificates.create({
     hash,
     settings,
   });
   return res.status(200).send({certificate});
 };
 const list = async (req, res) => {
-  const certificate = await Certificate.findAll({});
+  const certificate = await Certificates.findAll({});
 
   return res.status(200).send({certificate});
 };
