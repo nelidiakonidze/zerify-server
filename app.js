@@ -19,8 +19,8 @@ const {
 } = require('./server/controllers/courses');
 
 const {
-  create: certificatesCreate,
-  list: certificatesList,
+  create: certificateCreate,
+  list: certificateList,
 } = require('./server/controllers/certificate');
 
 const port = parseInt(process.env.PORT, 10) || 3000;
@@ -49,8 +49,8 @@ app.get('/api/courses/:id', coursesGetCoursesById);
 app.delete('/api/courses/:id', coursesDeleteCourseById);
 
 //Certificate Routes
-app.post('/api/certificate', certificatesCreate);
-app.get('/api/certificate', certificatesList);
+app.post('/api/certificate', certificateCreate);
+app.get('/api/certificate', certificateList);
 
 app.get('*', (req, res) =>
   res.status(200).send({
