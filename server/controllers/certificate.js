@@ -12,16 +12,16 @@ const create = async (req, res) => {
     return res.status(400).send({message: 'Invalid certificate'});
   }
 
-  const certificate = await Certificate.create({
+  const certificates = await Certificate.create({
     hash,
     certificate,
   });
-  return res.status(200).send({certificate});
+  return res.status(200).send({certificates});
 };
 const list = async (req, res) => {
-  const certificate = await Certificate.findAll({});
+  const certificates = await Certificate.findAll({});
 
-  return res.status(200).send({certificate});
+  return res.status(200).send({certificates});
 };
 
 module.exports = {
