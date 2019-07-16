@@ -9,7 +9,7 @@ const create = async (req, res) => {
   }
 
   if (!settings) {
-    return res.status(400).send({message: 'Invalid certificate'});
+    return res.status(400).send({message: 'Invalid settings'});
   }
 
   const certificate = await Certificates.create({
