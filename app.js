@@ -49,8 +49,8 @@ app.get('/api/courses/:id', coursesGetCoursesById);
 app.delete('/api/courses/:id', coursesDeleteCourseById);
 
 //Certificate Routes
-app.post('/api/courses', certificateCreate);
-app.get('/api/courses', certificateList);
+app.post('/api/certificate', certificateCreate);
+app.get('/api/certificate', certificateList);
 
 app.get('*', (req, res) =>
   res.status(200).send({
