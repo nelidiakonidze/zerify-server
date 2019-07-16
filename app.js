@@ -18,6 +18,11 @@ const {
   deleteCourseById: coursesDeleteCourseById,
 } = require('./server/controllers/courses');
 
+const {
+  create: certificateCreate,
+  list: certificateList,
+} = require('./server/controllers/certificate');
+
 const port = parseInt(process.env.PORT, 10) || 3000;
 const app = express(); // setup express application
 app.set('port', port);
@@ -42,6 +47,10 @@ app.post('/api/courses', coursesCreate);
 app.get('/api/courses', coursesList);
 app.get('/api/courses/:id', coursesGetCoursesById);
 app.delete('/api/courses/:id', coursesDeleteCourseById);
+
+//Certificate Routes
+app.post('/api/courses', certificateCreate);
+app.get('/api/courses', certificateList);
 
 app.get('*', (req, res) =>
   res.status(200).send({
