@@ -1,7 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Certificate = sequelize.define('Certificate', {
-    id: DataTypes.STRING,
+    hash: DataTypes.STRING,
     certificate: DataTypes.STRING
   }, {});
   Certificate.associate = function(models) {

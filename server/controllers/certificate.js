@@ -3,8 +3,8 @@ const {Certificate} = require('../models');
 const create = async (req, res) => {
   //   const id = req.body.id;
   //   const certificate = req.body.certificate;
-  const {id, certificate} = req.body;
-  if (!id) {
+  const {hash, certificate} = req.body;
+  if (!hash) {
     return res.status(400).send({message: 'Invalid hash'});
   }
 
@@ -13,7 +13,7 @@ const create = async (req, res) => {
   }
 
   const certificate = await Certificate.create({
-    id,
+    hash,
     certificate,
   });
   return res.status(200).send({certificate});
