@@ -11,7 +11,9 @@ const create = async (req, res) => {
   if (!settings) {
     return res.status(400).send({message: 'Invalid settings'});
   }
+  console.log(settings);
   const parsed = JSON.parse(settings);
+
   const certificate = await Certificates.create({
     hash,
     parsed,
@@ -48,11 +50,11 @@ const getCertificateByHash = async (req, res) => {
   if (!hash) {
     return res.sendStatus(404);
   }
-
+  console.log(req.query.hash);
   try {
     const certificate = await Certificates.findOne({
       where: {
-        hash: hash.req.body,
+        hash: req.query.hash,
       },
     });
     if (!certificate) {
