@@ -13,9 +13,6 @@ const email = async (req, res) => {
       user: 'godfrey.ledner71@ethereal.email', // generated ethereal user
       pass: 'BYpVyN6qEx3F7aVUDV', // generated ethereal password
     },
-    tls: {
-      rejectUnauthorized: false,
-    },
   });
 
   let mailOptions = {
@@ -36,9 +33,8 @@ const email = async (req, res) => {
     }
     console.log('Message sent: %s', info.messageId);
     console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-
-    res.render({msg: 'Email has been sent'});
   });
+  email().catch(console.error);
 };
 
 const create = async (req, res) => {
