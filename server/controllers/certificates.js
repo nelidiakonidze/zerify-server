@@ -58,7 +58,7 @@ const getCertificateByHash = async (req, res) => {
     if (!certificate) {
       return res.sendStatus(404);
     }
-    return res.send({certificate});
+    return res.send({hash});
   } catch (err) {
     return res.sendStatus(400);
   }
