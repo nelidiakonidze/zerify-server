@@ -32,7 +32,7 @@ const getCertificateById = async (req, res) => {
   }
 
   try {
-    const certificate = await certificate.findByPk(id);
+    const certificate = await Certificates.findByPk(id);
     if (!certificate) {
       return res.sendStatus(404);
     }
