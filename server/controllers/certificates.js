@@ -24,10 +24,10 @@ const list = async (req, res) => {
   return res.status(200).send({certificate});
 };
 
-const getCertificateById = async (req, res) => {
-  const {id} = req.params;
+const getCertificateByHash = async (req, res) => {
+  const {hash} = req.params;
 
-  if (!id) {
+  if (!hash) {
     return res.sendStatus(404);
   }
 
@@ -45,5 +45,5 @@ const getCertificateById = async (req, res) => {
 module.exports = {
   create,
   list,
-  getCertificateById,
+  getCertificateByHash,
 };
