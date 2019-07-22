@@ -45,5 +45,5 @@ const getCertificateById = async (req, res) => {
 module.exports = {
   create,
   list,
-  getCertificateByHash,
+  getCertificateById,
 };
