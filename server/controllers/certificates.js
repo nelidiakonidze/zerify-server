@@ -24,15 +24,15 @@ const list = async (req, res) => {
   return res.status(200).send({certificate});
 };
 
-const getCertificateByHash = async (req, res) => {
-  const {hash} = req.params;
+const getCertificateById = async (req, res) => {
+  const {id} = req.params;
 
-  if (!hash) {
+  if (!id) {
     return res.sendStatus(404);
   }
 
   try {
-    const certificate = await certificate.findByPk(hash);
+    const certificate = await certificate.findByPk(id);
     if (!certificate) {
       return res.sendStatus(404);
     }
@@ -45,5 +45,5 @@ const getCertificateByHash = async (req, res) => {
 module.exports = {
   create,
   list,
-  getCertificateByHash,
+  getCertificateById,
 };
