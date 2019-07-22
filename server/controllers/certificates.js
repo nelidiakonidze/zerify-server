@@ -42,8 +42,31 @@ const getCertificateById = async (req, res) => {
   }
 };
 
+const getCertificateByHash = async (req, res) => {
+  // const {id} = req.params;
+  const {hash} = req.body;
+  if (!hash) {
+    return res.sendStatus(404);
+  }
+
+  try {
+    const certificate = await Certificates.findOne({
+      where: {
+        hash: hash,
+      },
+    });
+    if (!certificate) {
+      return res.sendStatus(404);
+    }
+    return res.send({certificate});
+  } catch (err) {
+    return res.sendStatus(400);
+  }
+};
+
 module.exports = {
   create,
   list,
   getCertificateById,
+  getCertificateByHash,
 };
