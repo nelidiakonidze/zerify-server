@@ -44,7 +44,7 @@ const getCertificateById = async (req, res) => {
 
 const getCertificateByHash = async (req, res) => {
   // const {id} = req.params;
-  const {hash} = req.body;
+  // const {hash} = req.body;
   if (!hash) {
     return res.sendStatus(404);
   }
@@ -52,7 +52,7 @@ const getCertificateByHash = async (req, res) => {
   try {
     const certificate = await Certificates.findOne({
       where: {
-        hash: hash,
+        hash: hash.req.body,
       },
     });
     if (!certificate) {
