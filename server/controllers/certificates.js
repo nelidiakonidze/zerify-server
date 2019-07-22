@@ -11,10 +11,10 @@ const create = async (req, res) => {
   if (!settings) {
     return res.status(400).send({message: 'Invalid settings'});
   }
-
+  const parsed = JSON.parse(settings);
   const certificate = await Certificates.create({
     hash,
-    settings,
+    parsed,
   });
   return res.status(200).send({certificate});
 };
