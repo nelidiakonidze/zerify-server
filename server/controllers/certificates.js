@@ -24,7 +24,26 @@ const list = async (req, res) => {
   return res.status(200).send({certificate});
 };
 
+const getCertificateByHash = async (req, res) => {
+  const {hash} = req.params;
+
+  if (!hash) {
+    return res.sendStatus(404);
+  }
+
+  try {
+    const certificate = await certificate.findByPk(hash);
+    if (!certificate) {
+      return res.sendStatus(404);
+    }
+    return res.send({certificate});
+  } catch (err) {
+    return res.sendStatus(400);
+  }
+};
+
 module.exports = {
   create,
   list,
+  getCertificateByHash,
 };
