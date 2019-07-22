@@ -12,11 +12,11 @@ const create = async (req, res) => {
     return res.status(400).send({message: 'Invalid settings'});
   }
   console.log(settings);
-  const parsed = JSON.parse(settings);
+  const stringify = JSON.stringify(settings);
 
   const certificate = await Certificates.create({
     hash,
-    parsed,
+    stringify,
   });
   return res.status(200).send({certificate});
 };
