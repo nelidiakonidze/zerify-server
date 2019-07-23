@@ -21,8 +21,8 @@ const {
 const {
   create: certificatesCreate,
   list: certificatesList,
-  getCertificatesById: certificatesGetById,
-  getCertificatesByHash: certificatesGetByHash,
+  getCertificateById: certificatesGetById,
+  getCertificateByHash: certificatesGetByHash,
 } = require('./server/controllers/certificates');
 
 const port = parseInt(process.env.PORT, 10) || 3000;
