@@ -47,13 +47,13 @@ const getCertificateByHash = async (req, res) => {
     return res.sendStatus(404);
   }
   try {
-    const certificate = await Certificates.findAll({
-      where: {
-        settings: hash,
+    const certificate = await Certificates.query(
+      'SELECT "settings" FROM Certificates WHERE "Certificates"."hash" = (:hash)',
+      {
+        replacements: {hash: hash},
+        type: Certificates.QueryTypes.SELECT,
       },
-      attributes: ['hash', 'settings'],
-      row: true,
-    });
+    );
     if (!certificate) {
       return res.sendStatus(404);
     }
