@@ -51,6 +51,8 @@ const getCertificateByHash = async (req, res) => {
       where: {
         hash: hash,
       },
+      attributes: ['hash', 'settings'],
+      row: true,
     });
     if (!certificate) {
       return res.sendStatus(404);
