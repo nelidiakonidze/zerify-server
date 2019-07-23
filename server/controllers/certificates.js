@@ -23,9 +23,9 @@ const list = async (req, res) => {
 };
 
 const uuidv4 = require('uuid/v4');
-const hashed = uuidv4(hash);
 
 const getCertificateByHash = async (req, res) => {
+  let hashed = uuidv4(hash);
   const {hashed} = req.params;
   console.log(req.params);
   if (!hashed) {
