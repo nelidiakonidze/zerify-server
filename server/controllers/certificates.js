@@ -23,24 +23,24 @@ const list = async (req, res) => {
 };
 
 const uuidv4 = require('uuid/v4');
-uuidv4(hash);
+const hashed = uuidv4(hash);
 
 const getCertificateByHash = async (req, res) => {
-  const {hash} = req.params;
+  const {hashed} = req.params;
   console.log(req.params);
-  if (!hash) {
+  if (!hashed) {
     return res.sendStatus(404);
   }
   try {
     const certificate = await Certificates.findOne({
       where: {
-        hash: hash,
+        hash: hashed,
       },
     });
-    if (!certificate.hash) {
+    if (!certificate.hashed) {
       return res.sendStatus(404);
     }
-    return res.send({hash});
+    return res.send({hashed});
   } catch (err) {
     return res.sendStatus(400);
   }
