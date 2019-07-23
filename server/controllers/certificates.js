@@ -49,7 +49,7 @@ const getCertificateByHash = async (req, res) => {
   try {
     const certificate = await Certificates.findOne({
       where: {
-        hash: Certificates.hash,
+        hash: hash,
       },
     });
     if (!certificate) {
