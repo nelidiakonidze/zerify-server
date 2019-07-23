@@ -1,8 +1,6 @@
 const {Certificates} = require('../models');
 
 const create = async (req, res) => {
-  //   const id = req.body.id;
-  //   const certificate = req.body.certificate;
   const {hash, settings} = req.body;
   if (!hash) {
     return res.status(400).send({message: 'Invalid hash'});
@@ -49,7 +47,7 @@ const getCertificateByHash = async (req, res) => {
     return res.sendStatus(404);
   }
   try {
-    const certificate = await Certificates.findOne({
+    const certificate = await Certificates.findAll({
       where: {
         hash: Certificates.hash,
       },
