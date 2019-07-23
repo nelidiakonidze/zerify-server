@@ -49,9 +49,7 @@ const getCertificateByHash = async (req, res) => {
   try {
     const certificate = await Certificates.findAll({
       where: {
-        rank: {
-          [Op.eq]: hash,
-        },
+        hash: hash,
       },
     });
     if (!certificate) {
