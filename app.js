@@ -54,7 +54,7 @@ app.delete('/api/courses/:id', coursesDeleteCourseById);
 app.post('/api/certificate', certificatesCreate);
 app.get('/api/certificate', certificatesList);
 app.get('/api/certificate/:id', certificatesGetById);
-app.get('/api/certificate/hash', certificatesGetByHash);
+app.get('/api/certificate/:hash', certificatesGetByHash);
 
 app.get('*', (req, res) =>
   res.status(200).send({
