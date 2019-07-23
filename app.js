@@ -14,7 +14,7 @@ const {
 const {
   create: coursesCreate,
   list: coursesList,
-  getCoursesById: coursesGetCoursesById,
+  // getCoursesById: coursesGetCoursesById,
   deleteCourseById: coursesDeleteCourseById,
 } = require('./server/controllers/courses');
 
@@ -53,7 +53,7 @@ app.delete('/api/courses/:id', coursesDeleteCourseById);
 //Certificate Routes
 app.post('/api/certificate', certificatesCreate);
 app.get('/api/certificate', certificatesList);
-app.get('/api/certificate/:id', certificatesGetById);
+// app.get('/api/certificate/:id', certificatesGetById);
 app.get('/api/certificate/:hash', certificatesGetByHash);
 
 app.get('*', (req, res) =>
