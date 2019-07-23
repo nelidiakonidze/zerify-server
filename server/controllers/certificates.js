@@ -22,23 +22,23 @@ const list = async (req, res) => {
   return res.status(200).send({certificate});
 };
 
-// const getCertificateById = async (req, res) => {
-//   const {id} = req.params;
+const getCertificateById = async (req, res) => {
+  const {id} = req.params;
 
-//   if (!id) {
-//     return res.sendStatus(404);
-//   }
+  if (!id) {
+    return res.sendStatus(404);
+  }
 
-//   try {
-//     const certificate = await Certificates.findByPk(id);
-//     if (!certificate) {
-//       return res.sendStatus(404);
-//     }
-//     return res.send({certificate});
-//   } catch (err) {
-//     return res.sendStatus(400);
-//   }
-// };
+  try {
+    const certificate = await Certificates.findByPk(id);
+    if (!certificate) {
+      return res.sendStatus(404);
+    }
+    return res.send({certificate});
+  } catch (err) {
+    return res.sendStatus(400);
+  }
+};
 
 const getCertificateByHash = async (req, res) => {
   const {hash} = query.hash;
@@ -47,9 +47,9 @@ const getCertificateByHash = async (req, res) => {
     return res.sendStatus(404);
   }
   try {
-    const certificate = await Certificates.findOne({
+    const certificate = await Certificates.findAll({
       where: {
-        hash: hash,
+        settings: hash,
       },
       attributes: ['hash', 'settings'],
       row: true,
