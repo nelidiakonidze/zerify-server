@@ -14,14 +14,14 @@ const {
 const {
   create: coursesCreate,
   list: coursesList,
-  // getCoursesById: coursesGetCoursesById,
+  getCoursesById: coursesGetCoursesById,
   deleteCourseById: coursesDeleteCourseById,
 } = require('./server/controllers/courses');
 
 const {
   create: certificatesCreate,
   list: certificatesList,
-  getCertificateById: certificatesGetById,
+  // getCertificateById: certificatesGetById,
   getCertificateByHash: certificatesGetByHash,
 } = require('./server/controllers/certificates');
 
