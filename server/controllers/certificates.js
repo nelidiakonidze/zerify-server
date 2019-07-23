@@ -41,7 +41,7 @@ const getCertificateById = async (req, res) => {
 };
 
 const getCertificateByHash = async (req, res) => {
-  const {hash} = req.params;
+  const {hash} = req.params.hash;
   console.log(hash);
   if (!hash) {
     return res.sendStatus(404);
