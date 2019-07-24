@@ -18,7 +18,7 @@ const create = async (req, res) => {
     hashed,
     settings,
   });
-  console.log(res);
+  console.log('this is the', res);
   return res.send({hashed});
 };
 const list = async (req, res) => {
