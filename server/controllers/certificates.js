@@ -37,7 +37,7 @@ const getCertificateByHash = async (req, res) => {
         hash: hash,
       },
       attributes: {
-        exclude: ['id', 'hash'],
+        exclude: ['id', 'hash', 'createdAt', 'updatedAt'],
       },
     });
     if (!certificate) {
