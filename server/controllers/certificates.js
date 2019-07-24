@@ -40,7 +40,7 @@ const getCertificateByHash = async (req, res) => {
         exclude: ['id', 'hash'],
       },
     });
-    if (!certificate.hash) {
+    if (!certificate) {
       return res.sendStatus(404);
     }
     console.log({certificate});
