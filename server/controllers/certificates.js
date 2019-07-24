@@ -7,19 +7,19 @@ const create = async (req, res) => {
   //   return res.status(400).send({message: 'Invalid hash'});
   // }
 
-  var hashed = uuidv4();
-  console.log(hashed);
+  var hash = uuidv4();
+  console.log(hash);
 
   // if (settings) {
   //   return res.hash.send({message: 'you have your hash'});
   // }
 
   const certificate = await Certificates.create({
-    hashed,
+    hash,
     settings,
   });
   console.log('this is the', res);
-  return res.send({hashed});
+  return res.send({hash});
 };
 const list = async (req, res) => {
   const certificate = await Certificates.findAll({});
