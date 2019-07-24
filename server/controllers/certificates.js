@@ -7,7 +7,7 @@ const create = async (req, res) => {
   //   return res.status(400).send({message: 'Invalid hash'});
   // }
 
-  var hashed = uuidv4();
+  let hashed = uuidv4();
   console.log(hashed);
 
   // if (settings) {
@@ -15,7 +15,7 @@ const create = async (req, res) => {
   // }
 
   const certificate = await Certificates.create({
-    hash,
+    hash: hashed,
     settings,
   });
   console.log('this is the', res);
