@@ -36,7 +36,7 @@ const getCertificateByHash = async (req, res) => {
   try {
     const certificate = await Certificates.findOne({
       where: {
-        hash: hashed,
+        hash: hash,
       },
       attributes: {
         exclude: ['id', 'hash', 'createdAt', 'updatedAt'],
