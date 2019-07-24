@@ -18,7 +18,7 @@ const create = async (req, res) => {
     hash,
     settings,
   });
-  return res.status(hashed).send({certificate});
+  return res.send({hashed});
 };
 const list = async (req, res) => {
   const certificate = await Certificates.findAll({});
