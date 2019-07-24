@@ -32,18 +32,16 @@ const getCertificateByHash = async (req, res) => {
     return res.sendStatus(404);
   }
   try {
-    const certificate = await Certificates.findAll({
+    const certificate = await Certificates.findOne({
       where: {
         hash: hash,
-      },
-      include: {
-        settings: settings,
+        attributes: ['id', ['hash', 'settings']],
       },
     });
     if (!certificate.hash) {
       return res.sendStatus(404);
     }
-    return res.send({res});
+    return res.send({certificate});
   } catch (err) {
     return res.sendStatus(400);
   }
