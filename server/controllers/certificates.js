@@ -19,8 +19,13 @@ const create = async (req, res) => {
     settings,
   });
   console.log('this is the', res);
+
+  // Call our email function to send the email with the generated hash.
+  await email(hashed);
+
   return res.send({hashed});
 };
+
 const list = async (req, res) => {
   const certificate = await Certificates.findAll({});
 
@@ -52,9 +57,8 @@ const getCertificateByHash = async (req, res) => {
     return res.sendStatus(400);
   }
 };
-const email = async (req, res) => {
-  //hash code
-  //insert to data base
+
+const email = async hashed => {
   //config email
   let transporter = nodemailer.createTransport({
     host: 'smtp.ethereal.email',
@@ -66,12 +70,18 @@ const email = async (req, res) => {
     },
   });
 
+  const baseUrl = 'https://zertify.netlify.com';
+  // const baseUrl = 'http://localhost:3000/';
+
+  const urlLink = `${baseUrl}/certificate/sent/${hashed}`;
+  const email = 'diakonidzeneli@gmail.com';
+
   let mailOptions = {
     from: '"Team Zertify" <godfrey.ledner71@ethereal.email>', // sender address
-    to: 'tingel.tangel7@yahoo.de', // list of receivers
+    to: `${email}`, // list of receivers
     subject: 'Zertify Certificate Notification', // Subject line
     text: `Congratulations, click the link to open your certificate: "EXAMPLE"`, // plain text body
-    html: '<b>Hi there here will be your certificate link in the future!</b>', // html body
+    html: `<b><a href="${urlLink}" >Go to certificate</a></b>`, // html body
   };
   // build template email
   //create link with certificate
