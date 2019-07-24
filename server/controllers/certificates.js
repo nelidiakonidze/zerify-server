@@ -36,7 +36,7 @@ const getCertificateByHash = async (req, res) => {
       where: {
         hash: hash,
         attributes: {
-          include: ['hash', 'settings'],
+          exclude: ['id'],
         },
       },
     });
