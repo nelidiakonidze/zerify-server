@@ -37,13 +37,12 @@ const getCertificateByHash = async (req, res) => {
         hash: hash,
       },
       include: {
-        settings,
+        settings: settings,
       },
     });
     if (!certificate.hash) {
       return res.sendStatus(404);
     }
-    console.log(res);
     return res.send({res});
   } catch (err) {
     return res.sendStatus(400);
