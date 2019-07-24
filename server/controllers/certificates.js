@@ -27,7 +27,7 @@ const list = async (req, res) => {
 
 const getCertificateByHash = async (req, res) => {
   const {hash} = req.params;
-  console.log(req.params);
+
   if (!hash) {
     return res.sendStatus(404);
   }
@@ -43,6 +43,7 @@ const getCertificateByHash = async (req, res) => {
     if (!certificate.hash) {
       return res.sendStatus(404);
     }
+    console.log({certificate});
     return res.send({certificate});
   } catch (err) {
     return res.sendStatus(400);
