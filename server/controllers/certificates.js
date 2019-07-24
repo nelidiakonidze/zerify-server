@@ -1,5 +1,5 @@
 const {Certificates} = require('../models');
-// const uuidv4 = require('uuid/v4');
+const uuidv4 = require('uuid/v4');
 
 const create = async (req, res) => {
   const {hash, settings} = req.body;
@@ -22,8 +22,9 @@ const list = async (req, res) => {
 
   return res.status(200).send({certificate});
 };
-// let hashed = uuidv4(hash);
-// console.log(hashed);
+
+let hashed = uuidv4(uuidv4);
+console.log(hashed);
 
 const getCertificateByHash = async (req, res) => {
   const {hash} = req.params;
