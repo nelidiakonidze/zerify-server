@@ -23,7 +23,7 @@ const list = async (req, res) => {
   return res.status(200).send({certificate});
 };
 
-let hashed = uuidv4();
+var hashed = uuidv4();
 console.log(hashed);
 
 const getCertificateByHash = async (req, res) => {
