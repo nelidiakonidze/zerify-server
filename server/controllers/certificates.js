@@ -66,13 +66,13 @@ const email = async hashed => {
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
-      user: 'godfrey.ledner71@ethereal.email', // generated ethereal user
-      pass: 'BYpVyN6qEx3F7aVUDV', // generated ethereal password
+      user: 'lance.morar98@ethereal.email', // generated ethereal user
+      pass: 'G2x1G7JKQ26b2Xrq53', // generated ethereal password
     },
   });
 
-  const baseUrl = 'https://zertify.netlify.com';
-  // const baseUrl = 'http://localhost:3000/';
+  // const baseUrl = 'https://zertify.netlify.com';
+  const baseUrl = 'http://localhost:3000/';
 
   const urlLink = `${baseUrl}/certificate/sent/${hashed}`;
   const email = 'diakonidzeneli@gmail.com';
