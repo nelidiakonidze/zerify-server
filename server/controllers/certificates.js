@@ -89,14 +89,17 @@ const email = async hashed => {
   //create link with certificate
   // sent email
   // send mail with defined transport object
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      return console.log(error);
-    }
-    console.log('Message sent: %s', info.messageId);
-    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-  });
-  email().catch(console.error);
+  try {
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        return console.log(error);
+      }
+      console.log('Message sent: %s', info.messageId);
+      console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+    });
+  } catch (error) {
+    console.error;
+  }
 };
 
 module.exports = {
