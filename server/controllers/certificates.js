@@ -66,6 +66,7 @@ const email = async hashed => {
     host: 'smtp.ethereal.email',
     port: 587,
     secure: false, // true for 465, false for other ports
+    sendMail: true,
     auth: {
       user: 'lance.morar98@ethereal.email', // generated ethereal user
       pass: 'G2x1G7JKQ26b2Xrq53', // generated ethereal password
