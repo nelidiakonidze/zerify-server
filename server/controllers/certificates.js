@@ -76,7 +76,7 @@ const email = async hashed => {
   // const baseUrl = 'http://localhost:3000/';
 
   const urlLink = `${baseUrl}/edera/${hashed}/certificate.pdf`;
-  const emailStudent = Certificates.settings.email;
+  const emailStudent = certificate.settings.email;
 
   let mailOptions = {
     from: '"Team Zertify" <lance.morar98@ethereal.email>', // sender address
