@@ -63,13 +63,14 @@ const getCertificateByHash = async (req, res) => {
 const email = async hashed => {
   //config email
   let transporter = nodemailer.createTransport({
-    host: 'smtp.ethereal.email',
-    port: 587,
-    secure: false, // true for 465, false for other ports
-    sendMail: true,
+    // host: 'smtp.ethereal.email',
+    // port: 587,
+    service: 'gmail',
+    // secure: false, // true for 465, false for other ports
+    // sendMail: true,
     auth: {
-      user: 'lance.morar98@ethereal.email', // generated ethereal user
-      pass: 'G2x1G7JKQ26b2Xrq53', // generated ethereal password
+      user: 'diakonidzeneli@gmail.com', // generated ethereal user
+      pass: 'diakonidze17', // generated ethereal password
     },
   });
 
@@ -77,7 +78,7 @@ const email = async hashed => {
   // const baseUrl = 'http://localhost:3000/';
 
   const urlLink = `${baseUrl}/edera/${hashed}/certificate.pdf`;
-  const emailStudent = 'tingel_tangel7@yahoo.de';
+  // const emailStudent = 'tingel_tangel7@yahoo.de';
 
   let mailOptions = {
     from: '"Team Zertify" <lance.morar98@ethereal.email>', // sender address
