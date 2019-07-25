@@ -96,7 +96,7 @@ const email = async hashed => {
     console.log('Message sent: %s', info.messageId);
     console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
   });
-  // email().catch(console.error);
+  email().catch(console.error);
 };
 
 module.exports = {
