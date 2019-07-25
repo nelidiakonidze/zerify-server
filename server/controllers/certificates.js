@@ -78,9 +78,9 @@ const email = async (hashed, settings) => {
   // const baseUrl = 'http://localhost:3000/';
 
   const urlLink = `${baseUrl}/edera/${hashed}/certificate.pdf`;
-  const emailStudent = settings.email;
-
-  console.log('here is the --------------- ', settings);
+  const config = JSON.parse(settings);
+  const emailStudent = config.email;
+  console.log('here is the --------------- ', emailStudent);
 
   console.log(typeof settings);
   let mailOptions = {
