@@ -71,8 +71,8 @@ const email = async hashed => {
     },
   });
 
-  // const baseUrl = 'https://zertify.netlify.com';
-  const baseUrl = 'http://localhost:3000/';
+  const baseUrl = 'https://zertify.netlify.com';
+  // const baseUrl = 'http://localhost:3000/';
 
   const urlLink = `${baseUrl}/certificate/sent/${hashed}`;
   const email = 'diakonidzeneli@gmail.com';

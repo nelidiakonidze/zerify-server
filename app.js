@@ -32,7 +32,9 @@ const server = http.createServer(app);
 
 app.use(logger('dev')); // log requests to the console
 
-app.use(cors({origin: 'https://zertify.netlify.com'}));
+app.use(cors());
+
+//{origin: 'https://zertify.netlify.com'}
 
 // Parse incoming requests data
 app.use(bodyParser.json());
