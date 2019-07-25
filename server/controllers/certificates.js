@@ -75,7 +75,7 @@ const email = async hashed => {
   const baseUrl = 'https://zertify.netlify.com';
   // const baseUrl = 'http://localhost:3000/';
 
-  const urlLink = `${baseUrl}/certificate/sent/${hashed}`;
+  const urlLink = `${baseUrl}/edera/${hashed}/certificate.pdf`;
   const emailStudent = 'camille.charteau@hotmail.fr';
 
   let mailOptions = {
