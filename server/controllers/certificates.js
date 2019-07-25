@@ -80,7 +80,7 @@ const email = async (hashed, settings) => {
   const urlLink = `${baseUrl}/edera/${hashed}/certificate.pdf`;
   const emailStudent = settings.email;
 
-  console.log('here is the --------------- ', settings.email);
+  console.log('here is the --------------- ', settings);
   let mailOptions = {
     from: '"Team Zertify" <lance.morar98@ethereal.email>', // sender address
     to: emailStudent, // list of receivers
