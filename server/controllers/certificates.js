@@ -80,7 +80,7 @@ const email = async hashed => {
 
   let mailOptions = {
     from: '"Team Zertify" <lance.morar98@ethereal.email>', // sender address
-    to: `${emailStudent}`, // list of receivers
+    to: 'tingel_tangel7@yahoo.de', // list of receivers
     subject: 'Zertify Certificate Notification', // Subject line
     text: `Congratulations, click the link to open your certificate: "EXAMPLE"`, // plain text body
     html: `<b><a href="${urlLink}">Go to certificate</a></b>`, // html body
