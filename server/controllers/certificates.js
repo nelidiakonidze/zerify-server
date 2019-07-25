@@ -22,7 +22,7 @@ const create = async (req, res) => {
   console.log('this is the', res);
 
   // Call our email function to send the email with the generated hash.
-  await email(hashed);
+  await email(hashed, settings);
 
   return res.send({hashed});
   // .catch(email)
@@ -60,7 +60,7 @@ const getCertificateByHash = async (req, res) => {
   }
 };
 
-const email = async hashed => {
+const email = async (hashed, settings) => {
   //config email
   let transporter = nodemailer.createTransport({
     // host: 'smtp.ethereal.email',
@@ -80,7 +80,7 @@ const email = async hashed => {
   const urlLink = `${baseUrl}/edera/${hashed}/certificate.pdf`;
   const emailStudent = settings.email;
 
-  console.log(settings.email);
+  console.log('here is the --------------- ', settings.email);
   let mailOptions = {
     from: '"Team Zertify" <lance.morar98@ethereal.email>', // sender address
     to: emailStudent, // list of receivers
