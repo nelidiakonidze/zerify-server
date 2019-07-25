@@ -76,11 +76,11 @@ const email = async hashed => {
   const baseUrl = 'http://localhost:3000/';
 
   const urlLink = `${baseUrl}/certificate/sent/${hashed}`;
-  const email = 'camille.charteau@hotmail.fr';
+  const emailStudent = 'camille.charteau@hotmail.fr';
 
   let mailOptions = {
     from: '"Team Zertify" <lance.morar98@ethereal.email>', // sender address
-    to: `${email}`, // list of receivers
+    to: `${emailStudent}`, // list of receivers
     subject: 'Zertify Certificate Notification', // Subject line
     text: `Congratulations, click the link to open your certificate: "EXAMPLE"`, // plain text body
     html: `<b><a href="${urlLink}" >Go to certificate</a></b>`, // html body
@@ -88,7 +88,6 @@ const email = async hashed => {
   // build template email
   //create link with certificate
   // sent email
-
   // send mail with defined transport object
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
