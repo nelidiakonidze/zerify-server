@@ -70,7 +70,7 @@ const email = async hashed => {
     // sendMail: true,
     auth: {
       user: 'diakonidzeneli@gmail.com', // generated ethereal user
-      pass: 'diakonidze17', // generated ethereal password
+      pass: 'alisubani17', // generated ethereal password
     },
   });
 
