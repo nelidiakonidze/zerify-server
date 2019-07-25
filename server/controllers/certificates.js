@@ -69,8 +69,8 @@ const email = async hashed => {
     // secure: false, // true for 465, false for other ports
     // sendMail: true,
     auth: {
-      user: 'diakonidzeneli@gmail.com', // generated ethereal user
-      pass: 'alisubani17', // generated ethereal password
+      user: 'teamzertify@gmail.com', // generated ethereal user
+      pass: 'wearegreat', // generated ethereal password
     },
   });
 
@@ -78,11 +78,12 @@ const email = async hashed => {
   // const baseUrl = 'http://localhost:3000/';
 
   const urlLink = `${baseUrl}/edera/${hashed}/certificate.pdf`;
-  // const emailStudent = 'tingel_tangel7@yahoo.de';
+  const emailStudent = settings.email;
 
+  console.log(settings.email);
   let mailOptions = {
     from: '"Team Zertify" <lance.morar98@ethereal.email>', // sender address
-    to: 'tingel_tangel7@yahoo.de', // list of receivers
+    to: emailStudent, // list of receivers
     subject: 'Zertify Certificate Notification', // Subject line
     text: `Congratulations, click the link to open your certificate: "EXAMPLE"`, // plain text body
     html: `<b><a href="${urlLink}">Go to certificate</a></b>`, // html body
