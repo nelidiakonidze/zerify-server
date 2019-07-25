@@ -22,7 +22,7 @@ const create = async (req, res) => {
   console.log('this is the', res);
 
   // Call our email function to send the email with the generated hash.
-  await email(hashed);
+  // await email(hashed);
 
   return res.send({hashed});
 };
