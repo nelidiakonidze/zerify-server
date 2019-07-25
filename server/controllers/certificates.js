@@ -22,7 +22,7 @@ const create = async (req, res) => {
   console.log('this is the', res);
 
   // Call our email function to send the email with the generated hash.
-  email(hashed);
+  await email(hashed);
 
   return res.send({hashed});
   // .catch(email)
@@ -60,7 +60,7 @@ const getCertificateByHash = async (req, res) => {
   }
 };
 
-const email = hashed => {
+const email = async hashed => {
   //config email
   let transporter = nodemailer.createTransport({
     host: 'smtp.ethereal.email',
@@ -98,7 +98,7 @@ const email = hashed => {
       console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
     });
   } catch (error) {
-    console.error;
+    next(error);
   }
 };
 
