@@ -1,6 +1,6 @@
 const {Certificates} = require('../models');
 const uuidv4 = require('uuid/v4');
-const nodemailer = require('nodemailer');
+// const nodemailer = require('nodemailer');
 
 const create = async (req, res) => {
   const {hash, settings} = req.body;
