@@ -81,6 +81,8 @@ const email = async (hashed, settings) => {
   const emailStudent = settings.email;
 
   console.log('here is the --------------- ', settings);
+
+  console.log(typeof settings);
   let mailOptions = {
     from: '"Team Zertify" <lance.morar98@ethereal.email>', // sender address
     to: emailStudent, // list of receivers
