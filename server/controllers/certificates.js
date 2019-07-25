@@ -25,6 +25,7 @@ const create = async (req, res) => {
   // await email(hashed);
 
   return res.send({hashed});
+  // .catch(email)
 };
 
 const list = async (req, res) => {
