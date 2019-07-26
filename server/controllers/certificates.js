@@ -89,13 +89,10 @@ const email = async (hashed, settings) => {
 
   console.log(typeof settings);
   let mailOptions = {
-    from: '"Team Zertify" <lance.morar98@ethereal.email>', // sender address
+    from: '"Team Zertify" <teamzertify@gmail.com>', // sender address
     to: emailStudent.trim(), // list of receivers
-    subject: (
-      <p>
-        Edera - certificate Notification for ${nameStudent} ${lastNameStudent}
-      </p>
-    ), // Subject line
+    subject: `Edera - certificate notification for ${nameStudent} ${lastNameStudent}`, // Subject line
+
     text: `Congratulations, click the link to open your certificate: "EXAMPLE"`, // plain text body
     html: `<b>
     <p>Dear ${nameStudent},
