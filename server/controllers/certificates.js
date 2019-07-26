@@ -83,6 +83,7 @@ const email = async (hashed, settings) => {
   console.log('here is the --------------- ', emailStudent);
 
   const nameStudent = config.firstName;
+  const lastNameStudent = config.lastName;
 
   const courseStudent = config.name;
 
@@ -90,14 +91,18 @@ const email = async (hashed, settings) => {
   let mailOptions = {
     from: '"Team Zertify" <lance.morar98@ethereal.email>', // sender address
     to: emailStudent.trim(), // list of receivers
-    subject: 'Zertify Certificate Notification', // Subject line
+    subject: (
+      <p>
+        Edera - certificate Notification for ${nameStudent} ${lastNameStudent}
+      </p>
+    ), // Subject line
     text: `Congratulations, click the link to open your certificate: "EXAMPLE"`, // plain text body
     html: `<b>
     <p>Dear ${nameStudent},
-    We inform you that you successfully completed the course in ${courseStudent}. 
+    Congratulations, we inform you that you successfully completed the course in ${courseStudent}. 
     Below you can find the link to download and print the certificate. 
     <p>
-    <p>*Please, note that the link is avaliable in Desktop devices and Apple smartphones. </p>
+    <p>*Please, note that the link is only available in Desktop devices and Apple smartphones. </p>
     <a href="${urlLink}">Go to certificate</a></b>`, // html body
   };
   // build template email
