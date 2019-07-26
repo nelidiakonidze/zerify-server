@@ -94,15 +94,14 @@ const email = async (hashed, settings) => {
     subject: `Edera - certificate notification for ${nameStudent} ${lastNameStudent}`, // Subject line
 
     text: `Congratulations, click the link to open your certificate: "EXAMPLE"`, // plain text body
-    html: `<b>
-    <h8>Dear ${nameStudent},
-
-
+    html: `
+    <h4 style="font-size:18px";>Dear ${nameStudent},
     Congratulations! We inform you that you successfully completed the course in ${courseStudent}. 
     Below you can find the link to download and print the certificate. 
-    <h8>
-    <h12>*Please, note that the link is only available in Desktop devices and Apple smartphones. </h12>
-    <a href="${urlLink}">Go to certificate</a></b>`, // html body
+    <h4>
+    <hr />
+    <h6 style="font-size:12px">*Please, note that the link is only available in Desktop devices and Apple smartphones. </h6>
+    <a href="${urlLink}">Go to certificate</a>`, // html body
   };
   // build template email
   //create link with certificate
