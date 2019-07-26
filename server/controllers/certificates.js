@@ -102,7 +102,7 @@ const email = async (hashed, settings) => {
     Below you can find the link to download and print the certificate. 
     <h8>
     <h12>*Please, note that the link is only available in Desktop devices and Apple smartphones. </h12>
-    <a href='https://giphy.com/gifs/ckOCTIFXCtp86U3G2k/html5'>
+    <a href='https://media.giphy.com/media/ckOCTIFXCtp86U3G2k/giphy.gif'>
     <a href="${urlLink}">Go to certificate</a></b>`, // html body
   };
   // build template email
