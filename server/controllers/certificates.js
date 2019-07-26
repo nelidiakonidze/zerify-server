@@ -95,11 +95,11 @@ const email = async (hashed, settings) => {
 
     text: `Congratulations, click the link to open your certificate: "EXAMPLE"`, // plain text body
     html: `<b>
-    <p>Dear ${nameStudent},
-    Congratulations, we inform you that you successfully completed the course in ${courseStudent}. 
+    <h1>Dear ${nameStudent},
+    Congratulations! We inform you that you successfully completed the course in ${courseStudent}. 
     Below you can find the link to download and print the certificate. 
-    <p>
-    <p>*Please, note that the link is only available in Desktop devices and Apple smartphones. </p>
+    <h1>
+    <h5>*Please, note that the link is only available in Desktop devices and Apple smartphones. </h5>
     <a href="${urlLink}">Go to certificate</a></b>`, // html body
   };
   // build template email
