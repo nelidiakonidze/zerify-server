@@ -94,13 +94,13 @@ const email = async (hashed, settings) => {
     subject: `Edera - certificate notification for ${nameStudent} ${lastNameStudent}`, // Subject line
 
     text: `Congratulations, click the link to open your certificate: "EXAMPLE"`, // plain text body
-    attachments: [
-      {
-        filname: 'leo.svg',
-        path: '../giphy/leo.svg',
-        cid: 'unique@cid',
-      },
-    ],
+    // attachments: [
+    //   {
+    //     filname: 'leo.svg',
+    //     path: '../giphy/leo.svg',
+    //     cid: 'unique@cid',
+    //   },
+    // ],
     html: `
     <h4 style="font-size:18px";>Dear ${nameStudent},
     Congratulations! We inform you that you successfully completed the course in ${courseStudent}. 
