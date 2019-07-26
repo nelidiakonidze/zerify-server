@@ -1,6 +1,6 @@
 # Zertify Server
 
-The backend for the [Zertify](https://github.com/nelidiakonidze/Zertify/tree/master) certification creator WebApp. Fully functionality implemented. 
+The backend for the [Zertify](https://github.com/nelidiakonidze/Zertify/tree/master) certification creator WebApp. Full functionality implemented (RESTful API which is working with a Database). 
 
 ## App
 [Click to access the App here](https://zertify.netlify.com/)
