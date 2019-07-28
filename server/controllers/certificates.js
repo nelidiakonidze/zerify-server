@@ -11,21 +11,15 @@ const create = async (req, res) => {
   let hashed = uuidv4();
   console.log(hashed);
 
-  // if (settings) {
-  //   return res.hash.send({message: 'you have your hash'});
-  // }
-
   const certificate = await Certificates.create({
     hash: hashed,
     settings,
   });
-  console.log('this is the', res);
 
   // Call our email function to send the email with the generated hash.
   await email(hashed, settings);
 
   return res.send({hashed});
-  // .catch(email)
 };
 
 const list = async (req, res) => {
@@ -61,13 +55,9 @@ const getCertificateByHash = async (req, res) => {
 };
 
 const email = async (hashed, settings) => {
-  //config email
   let transporter = nodemailer.createTransport({
-    // host: 'smtp.ethereal.email',
-    // port: 587,
     service: 'gmail',
-    // secure: false, // true for 465, false for other ports
-    // sendMail: true,
+
     auth: {
       user: 'teamzertify@gmail.com', // generated ethereal user
       pass: 'wearegreat', // generated ethereal password
@@ -75,7 +65,6 @@ const email = async (hashed, settings) => {
   });
 
   const baseUrl = 'https://zertify.netlify.com';
-  // const baseUrl = 'http://localhost:3000/';
 
   const urlLink = `${baseUrl}/edera/${hashed}/certificate.pdf`;
   const config = JSON.parse(settings);
@@ -94,13 +83,6 @@ const email = async (hashed, settings) => {
     subject: `Edera - certificate notification for ${nameStudent} ${lastNameStudent}`, // Subject line
 
     text: `Congratulations, click the link to open your certificate: "EXAMPLE"`, // plain text body
-    // attachments: [
-    //   {
-    //     filname: 'leo.svg',
-    //     path: '../giphy/leo.svg',
-    //     cid: 'unique@cid',
-    //   },
-    // ],
     html: `
     <h4 style="font-size:18px";>Dear ${nameStudent},
     Congratulations! We inform you that you successfully completed the course in ${courseStudent}. 
@@ -110,10 +92,6 @@ const email = async (hashed, settings) => {
     <h6 style="font-size:12px">*Please, note that the link is only available in Desktop devices and Apple smartphones. </h6>
     <a href="${urlLink}">Go to certificate</a>`, // html body
   };
-  // build template email
-  //create link with certificate
-  // sent email
-  // send mail with defined transport object
   try {
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
